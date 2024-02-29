@@ -1,0 +1,24 @@
+sqoop job --create sqoop_job_Categories -- import --connect jdbc:postgresql://pg-236dceeb-daiict-7b6e.a.aivencloud.com:10728/ecommerce-db --username avnadmin --password-file file:///secrets/password.txt --table categories --target-dir /database/categories --incremental append --check-column category
+
+
+sqoop job --create sqoop_job_Cust_hist -- import --connect jdbc:postgresql://pg-236dceeb-daiict-7b6e.a.aivencloud.com:10728/ecommerce-db --username avnadmin --password-file file:///secrets/password.txt --table cust_hist --target-dir /database/cust_hist --incremental append --check-column customerid -m 1
+
+
+sqoop job --create sqoop_job_Customers -- import --connect jdbc:postgresql://pg-236dceeb-daiict-7b6e.a.aivencloud.com:10728/ecommerce-db --username avnadmin --password-file file:///secrets/password.txt --table customers --target-dir /database/customers --incremental append --check-column customerid
+
+
+sqoop job --create sqoop_job_Inventories -- import --connect jdbc:postgresql://pg-236dceeb-daiict-7b6e.a.aivencloud.com:10728/ecommerce-db --username avnadmin --password-file file:///secrets/password.txt --table inventory --target-dir /database/inventory --incremental append --check-column prod_id
+
+
+sqoop job --create sqoop_job_Orderlines -- import --connect jdbc:postgresql://pg-236dceeb-daiict-7b6e.a.aivencloud.com:10728/ecommerce-db --username avnadmin --password-file file:///secrets/password.txt --table orderlines --target-dir /database/orderlines --incremental append --check-column orderlineid -m 1
+
+
+sqoop job --create sqoop_job_Orders -- import --connect jdbc:postgresql://pg-236dceeb-daiict-7b6e.a.aivencloud.com:10728/ecommerce-db --username avnadmin --password-file file:///secrets/password.txt --table orders --target-dir /database/orders --incremental append --check-column orderid -m 1
+
+
+
+sqoop job --create sqoop_job_Products -- import --connect jdbc:postgresql://pg-236dceeb-daiict-7b6e.a.aivencloud.com:10728/ecommerce-db --username avnadmin --password-file file:///secrets/password.txt --table products --target-dir /database/products --incremental append --check-column prod_id -m 1
+
+
+
+
